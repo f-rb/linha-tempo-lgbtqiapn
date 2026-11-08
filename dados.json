@@ -1,0 +1,289 @@
+{
+  "meta": {
+    "titulo": "Linha do Tempo LGBTQIAPN+",
+    "subtitulo": "Direitos, Ciência e Bissexualidades — mundo e Brasil",
+    "atualizado": "2026-11"
+  },
+  "eixos": {
+    "direitos": { "label": "Direitos / Jurídico", "cor": "#2b6cb0" },
+    "ciencia":  { "label": "Ciência / Psi",       "cor": "#6b46c1" },
+    "bi":       { "label": "Bi / Não Monossexual", "cor": "#d53f8c" }
+  },
+  "eventos": [
+    {
+      "id": "1869-termo",
+      "data": "1869",
+      "ano": 1869,
+      "titulo": "Termo 'homossexual' é cunhado",
+      "resumo": "Karl-Maria Kertbeny usa o termo em carta, em contexto médico-jurídico alemão. Nasce no campo da patologia, não da identidade.",
+      "eixo": "ciencia",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "Kertbeny, 1869"
+    },
+    {
+      "id": "1892-bissexualidade",
+      "data": "1892",
+      "ano": 1892,
+      "titulo": "'Bissexualidade' aparece em contexto médico",
+      "resumo": "Usado para descrever 'hermafroditismo psíquico' — a bissexualidade nasce biologizada e patologizada, não como orientação.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "Chaddock / Krafft-Ebing"
+    },
+    {
+      "id": "1897-comite",
+      "data": "1897",
+      "ano": 1897,
+      "titulo": "Primeiro comitê científico pró-direitos (Berlim)",
+      "resumo": "Magnus Hirschfeld funda o Comitê Científico-Humanitário, primeira organização a lutar contra a criminalização.",
+      "eixo": "direitos",
+      "pais": "mundo",
+      "tipo": "movimento",
+      "fonte": "Hirschfeld"
+    },
+    {
+      "id": "1905-freud",
+      "data": "1905",
+      "ano": 1905,
+      "titulo": "Freud e a 'bissexualidade constitucional'",
+      "resumo": "Freud afirma que todos nasceriam bissexuais e a orientação se definiria na infância. Ambivalente: tira do crime, mas trata como etapa a ser 'resolvida'.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "Freud, Três Ensaios"
+    },
+    {
+      "id": "1948-kinsey",
+      "data": "1948",
+      "ano": 1948,
+      "titulo": "Kinsey Report e a escala 0–6",
+      "resumo": "Mostra que a maioria não se encaixa em polos; a monossexualidade exclusiva é minoria estatística. Base empírica para a bissexualidade.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "Kinsey et al."
+    },
+    {
+      "id": "1952-dsm1",
+      "data": "1952",
+      "ano": 1952,
+      "titulo": "DSM-I inclui 'homossexualidade' como transtorno",
+      "resumo": "Consolida a patologização psiquiátrica oficial — base para 'terapias de conversão'.",
+      "eixo": "ciencia",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "APA, DSM-I"
+    },
+    {
+      "id": "1969-stonewall",
+      "data": "1969-06-28",
+      "ano": 1969,
+      "titulo": "Stonewall",
+      "resumo": "Revolta após batida policial no bar Stonewall Inn (Nova York). Marco do movimento moderno.",
+      "eixo": "direitos",
+      "pais": "mundo",
+      "tipo": "movimento",
+      "fonte": "Stonewall"
+    },
+    {
+      "id": "1973-apa",
+      "data": "1973",
+      "ano": 1973,
+      "titulo": "APA remove a homossexualidade do DSM",
+      "resumo": "Marco central: a psiquiatria deixa de classificar a homossexualidade como transtorno. A OMS fará o mesmo em 1990.",
+      "eixo": "ciencia",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "APA"
+    },
+    {
+      "id": "1978-bi-ativismo",
+      "data": "1978",
+      "ano": 1978,
+      "titulo": "Ativismo bi começa a se organizar (EUA)",
+      "resumo": "Organizações bi surgem após Stonewall, enfrentando bifobia dentro da própria comunidade.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "movimento",
+      "fonte": "Bi Women's Network"
+    },
+    {
+      "id": "1985-cfp",
+      "data": "1985",
+      "ano": 1985,
+      "titulo": "Conselho Federal de Psicologia (Brasil)",
+      "resumo": "A psicologia brasileira não deve tratar a homossexualidade como doença.",
+      "eixo": "ciencia",
+      "pais": "brasil",
+      "tipo": "ciencia",
+      "fonte": "CFP"
+    },
+    {
+      "id": "1990-oms",
+      "data": "1990-05-17",
+      "ano": 1990,
+      "titulo": "OMS retira a homossexualidade da CID",
+      "resumo": "A CID-10 deixa de listar a homossexualidade como transtorno. Origem do IDAHOBIT (17 de maio).",
+      "eixo": "ciencia",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "OMS"
+    },
+    {
+      "id": "1990-bi-any",
+      "data": "1990",
+      "ano": 1990,
+      "titulo": "'Bi Any Other Name'",
+      "resumo": "Antologia marco do movimento bi; consolida vocabulário e comunidade.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "movimento",
+      "fonte": "Hutchins & Ka'ahumanu"
+    },
+    {
+      "id": "1998-visibilidade-bi",
+      "data": "1998-09-23",
+      "ano": 1998,
+      "titulo": "Primeiro Celebrate Bisexuality Day",
+      "resumo": "Criado por ativistas nos EUA; torna-se o Dia da Visibilidade Bissexual (23 de setembro).",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "movimento",
+      "fonte": "Wilbur, Curry, Page"
+    },
+    {
+      "id": "1999-cfp",
+      "data": "1999",
+      "ano": 1999,
+      "titulo": "CFP Resolução 001/99 (Brasil)",
+      "resumo": "Proíbe psicólogos de tratar a homossexualidade como doença e de atuar em 'terapias de conversão'.",
+      "eixo": "ciencia",
+      "pais": "brasil",
+      "tipo": "ciencia",
+      "fonte": "CFP"
+    },
+    {
+      "id": "2001-holanda",
+      "data": "2001-04-01",
+      "ano": 2001,
+      "titulo": "Holanda legaliza o casamento igualitário",
+      "resumo": "Primeiro país do mundo.",
+      "eixo": "direitos",
+      "pais": "mundo",
+      "tipo": "juridico",
+      "fonte": "Governo holandês"
+    },
+    {
+      "id": "2001-aven",
+      "data": "2001",
+      "ano": 2001,
+      "titulo": "AVEN e a visibilidade assexual",
+      "resumo": "A Asexuality Visibility and Education Network estrutura a comunidade assexual; a assexualidade passa a ser reconhecida como orientação.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "movimento",
+      "fonte": "AVEN"
+    },
+    {
+      "id": "2011-onu",
+      "data": "2011",
+      "ano": 2011,
+      "titulo": "ONU: resolução sobre orientação sexual e identidade de gênero",
+      "resumo": "Conselho de Direitos Humanos aprova resolução histórica.",
+      "eixo": "direitos",
+      "pais": "mundo",
+      "tipo": "juridico",
+      "fonte": "ONU"
+    },
+    {
+      "id": "2013-cnj",
+      "data": "2013-05-14",
+      "ano": 2013,
+      "titulo": "CNJ: casamento igualitário no Brasil",
+      "resumo": "Resolução 175 obriga cartórios a celebrar casamentos entre pessoas do mesmo sexo.",
+      "eixo": "direitos",
+      "pais": "brasil",
+      "tipo": "juridico",
+      "fonte": "CNJ"
+    },
+    {
+      "id": "2013-dsm5",
+      "data": "2013",
+      "ano": 2013,
+      "titulo": "DSM-5: ressalva sobre assexualidade",
+      "resumo": "Autoidentificação como assexual não deve ser diagnosticada como transtorno.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "APA, DSM-5"
+    },
+    {
+      "id": "2018-cid11",
+      "data": "2018-06-18",
+      "ano": 2018,
+      "titulo": "OMS remove 'transtorno de identidade de gênero' da CID-11",
+      "resumo": "Substitui por 'incongruência de gênero' — despatologização da transgeneridade.",
+      "eixo": "ciencia",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "OMS"
+    },
+    {
+      "id": "2019-stf",
+      "data": "2019-06-13",
+      "ano": 2019,
+      "titulo": "STF criminaliza homofobia e transfobia (Brasil)",
+      "resumo": "Equipara a homofobia/transfobia ao crime de racismo. A decisão não menciona explicitamente a bifobia.",
+      "eixo": "direitos",
+      "pais": "brasil",
+      "tipo": "juridico",
+      "fonte": "STF, ADI 26 / ADO 26"
+    },
+    {
+      "id": "2020-bostock",
+      "data": "2020-06-15",
+      "ano": 2020,
+      "titulo": "Bostock v. Clayton County (EUA)",
+      "resumo": "Suprema Corte protege contra discriminação no trabalho por orientação sexual e identidade de gênero.",
+      "eixo": "direitos",
+      "pais": "mundo",
+      "tipo": "juridico",
+      "fonte": "Suprema Corte dos EUA"
+    },
+    {
+      "id": "2021-sangue",
+      "data": "2021",
+      "ano": 2021,
+      "titulo": "STF: fim da restrição de doação de sangue por homens gays",
+      "resumo": "ADPF 554 derruba regra de abstinência de 12 meses considerada discriminatória.",
+      "eixo": "direitos",
+      "pais": "brasil",
+      "tipo": "juridico",
+      "fonte": "STF"
+    },
+    {
+      "id": "2022-cid11",
+      "data": "2022-01-01",
+      "ano": 2022,
+      "titulo": "CID-11 entra em vigor",
+      "resumo": "Consolida a despatologização da transgeneridade globalmente.",
+      "eixo": "ciencia",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "OMS"
+    },
+    {
+      "id": "2023-cfp",
+      "data": "2023",
+      "ano": 2023,
+      "titulo": "CFP Resolução 01/2023 (Brasil)",
+      "resumo": "Reforça a proibição de terapias de conversão e orienta psicólogos contra essas práticas.",
+      "eixo": "ciencia",
+      "pais": "brasil",
+      "tipo": "ciencia",
+      "fonte": "CFP"
+    }
+  ]
+}

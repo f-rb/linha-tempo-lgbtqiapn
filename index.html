@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linha do Tempo LGBTQIAPN+</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <h1>Linha do Tempo LGBTQIAPN+</h1>
+    <p class="subtitulo">Direitos, Ciência e Bissexualidades — mundo e Brasil</p>
+
+    <div class="filtros" role="group" aria-label="Filtros">
+      <div class="filtro-grupo">
+        <span class="filtro-label">Eixo:</span>
+        <button class="chip ativo" data-eixo="todos">Todos</button>
+        <button class="chip" data-eixo="direitos">Direitos</button>
+        <button class="chip" data-eixo="ciencia">Ciência/Psi</button>
+        <button class="chip" data-eixo="bi">Bi / Não Monossexual</button>
+      </div>
+      <div class="filtro-grupo">
+        <span class="filtro-label">País:</span>
+        <button class="chip ativo" data-pais="todos">Todos</button>
+        <button class="chip" data-pais="mundo">Mundo</button>
+        <button class="chip" data-pais="brasil">Brasil</button>
+      </div>
+    </div>
+
+    <div class="legenda" aria-label="Legenda de eixos">
+      <span><i class="dot" style="background:#2b6cb0"></i> Direitos</span>
+      <span><i class="dot" style="background:#6b46c1"></i> Ciência/Psi</span>
+      <span><i class="dot" style="background:#d53f8c"></i> Bi / Não Monossexual</span>
+    </div>
+  </header>
+
+  <main>
+    <section class="timeline" id="timeline" aria-live="polite">
+      <!-- cards injetados via JS -->
+    </section>
+    <p class="vazio" id="vazio" hidden>Nenhum evento com os filtros atuais.</p>
+  </main>
+
+  <footer>
+    <p>Fontes: CFP, APA, OMS, STF, ONU, CNJ. Datas verificáveis — confira fontes primárias antes de publicar.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
