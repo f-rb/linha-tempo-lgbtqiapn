@@ -45,6 +45,24 @@
     <p>Fontes: CFP, APA, OMS, STF, ONU, CNJ. Datas verificáveis — confira fontes primárias antes de publicar.</p>
   </footer>
 
+  <!-- ============================================================
+       MODAL DE DETALHES (novo)
+       <dialog> vazio: o JS preenche ao clicar num card.
+       O botão de fechar precisa existir aqui, fixo, para o JS só
+       ligar o evento de clique — não recriar o botão a cada abertura.
+       O atributo aria-labelledby aponta para o <h2> interno, que
+       o JS preenche com o título do evento.
+       ============================================================ -->
+  <dialog id="modal-evento" aria-labelledby="modal-titulo">
+    <button type="button" class="modal-fechar" id="modal-fechar" aria-label="Fechar">×</button>
+    <div class="modal-conteudo">
+      <span class="modal-data" id="modal-data"></span>
+      <h2 id="modal-titulo"></h2>
+      <p id="modal-resumo"></p>
+      <span class="modal-fonte" id="modal-fonte"></span>
+    </div>
+  </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>

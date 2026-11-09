@@ -1,6 +1,14 @@
 // ---------- Config ----------
 const CORES = { direitos: "#2b6cb0", ciencia: "#6b46c1", bi: "#d53f8c" };
 const LABELS = { direitos: "Direitos", ciencia: "Ciência/Psi", bi: "Bi / Não Monossexual" };
+const MODAL_IDS = {
+  dialog: "modal-evento",
+  fechar: "modal-fechar",
+  data: "modal-data",
+  titulo: "modal-titulo",
+  resumo: "modal-resumo",
+  fonte: "modal-fonte",
+};
 
 let eventos = [];
 let filtroEixo = "todos";
@@ -57,13 +65,12 @@ function render() {
       </div>
     `;
 
-    // acessibilidade: abre/fecha resumo (aqui o card já mostra tudo; deixamos gancho p/ modal)
     const card = artigo.querySelector(".card");
-    card.addEventListener("click", () => console.log("card clicado:", ev.id));
+    card.addEventListener("click", () => abrirModal(ev));
     card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
-        card.click();
+        abrirModal(ev);
       }
     });
 
@@ -96,6 +103,47 @@ function observar() {
   document.querySelectorAll(".evento").forEach(el => observer.observe(el));
 }
 
+// ---------- Modal ----------
+function abrirModal(ev) {
+  const dialog = document.getElementById(MODAL_IDS.dialog);
+  if (!dialog) return;
+
+  document.getElementById(MODAL_IDS.data).textContent = ev.data;
+  document.getElementById(MODAL_IDS.titulo).textContent = ev.titulo;
+  document.getElementById(MODAL_IDS.resumo).textContent = ev.resumo;
+  document.getElementById(MODAL_IDS.fonte).textContent =
+    `Fonte: ${ev.fonte} · ${ev.pais === "brasil" ? "Brasil" : "Mundo"}`;
+
+  dialog.style.setProperty("--cor-eixo", CORES[ev.eixo] || "#888");
+  dialog.showModal();
+}
+
+function fecharModal() {
+  const dialog = document.getElementById(MODAL_IDS.dialog);
+  if (dialog && dialog.open) dialog.close();
+}
+
+function ligarModal() {
+  const dialog = document.getElementById(MODAL_IDS.dialog);
+  const botaoFechar = document.getElementById(MODAL_IDS.fechar);
+  if (!dialog || !botaoFechar) return;
+
+  botaoFechar.addEventListener("click", fecharModal);
+
+  // Clique no backdrop: o <dialog> recebe o clique, mas o conteúdo
+  // interno não. Se o alvo do clique for o próprio <dialog>, foi backdrop.
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) fecharModal();
+  });
+
+  // Esc já fecha por padrão em <dialog> nativo, mas garantimos aqui
+  // também por consistência com navegadores antigos.
+  dialog.addEventListener("cancel", (e) => {
+    e.preventDefault();
+    fecharModal();
+  });
+}
+
 // ---------- Filtros ----------
 function ligarFiltros() {
   document.querySelectorAll('[data-eixo]').forEach(btn => {
@@ -118,5 +166,6 @@ function ligarFiltros() {
 }
 
 // ---------- Init ----------
+ligarModal();
 ligarFiltros();
 carregar();
