@@ -11,8 +11,8 @@ const MODAL_IDS = {
 };
 
 let eventos = [];
-let filtroEixo = "todos";
-let filtroPais = "todos";
+let filtroEixo = "bi";
+let filtroPais = "brasil";
 
 // ---------- Carregar dados ----------
 async function carregar() {
