@@ -11,8 +11,8 @@ const MODAL_IDS = {
 };
 
 let eventos = [];
-let filtroEixo = "todos";
-let filtroPais = "todos";
+let filtroEixo = "bi";
+let filtroPais = "brasil";
 
 // ---------- Carregar dados ----------
 async function carregar() {
@@ -104,6 +104,24 @@ function observar() {
 }
 
 // ---------- Modal ----------
+// Função auxiliar: escapa HTML e transforma URLs em links <a>
+function escreverFonteComLinks(elemento, texto) {
+  // 1. Escapa caracteres HTML para evitar injeção (o "problema de segurança")
+  const textoEscapado = texto
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+  // 2. Encontra URLs (http:// ou https://) e as transforma em links
+  const textoComLinks = textoEscapado.replace(
+    /(https?:\/\/[^\s]+)/g,
+    '<a href="$1" target="_blank" rel="noopener noreferrer">$1</a>'
+  );
+
+  // 3. Insere o resultado no elemento
+  elemento.innerHTML = textoComLinks;
+}
+
 function abrirModal(ev) {
   const dialog = document.getElementById(MODAL_IDS.dialog);
   if (!dialog) return;
@@ -111,8 +129,11 @@ function abrirModal(ev) {
   document.getElementById(MODAL_IDS.data).textContent = ev.data;
   document.getElementById(MODAL_IDS.titulo).textContent = ev.titulo;
   document.getElementById(MODAL_IDS.resumo).textContent = ev.resumo;
-  document.getElementById(MODAL_IDS.fonte).textContent =
-    `Fonte: ${ev.fonte} · ${ev.pais === "brasil" ? "Brasil" : "Mundo"}`;
+  
+  // A linha abaixo foi trocada: agora usa a função auxiliar para gerar links
+  const fonteEl = document.getElementById(MODAL_IDS.fonte);
+  const textoFonte = `Fonte: ${ev.fonte} · ${ev.pais === "brasil" ? "Brasil" : "Mundo"}`;
+  escreverFonteComLinks(fonteEl, textoFonte);
 
   dialog.style.setProperty("--cor-eixo", CORES[ev.eixo] || "#888");
   dialog.showModal();

@@ -284,6 +284,17 @@
       "pais": "brasil",
       "tipo": "ciencia",
       "fonte": "CFP"
+    },
+    {
+      "id": "2022-cfp-bissexualidades",
+      "data": "2022-05-17",
+      "ano": 2022,
+      "titulo": "CFP Resolução 08/2022 — bissexualidades e orientações não monossexuais",
+      "resumo": "Primeira resolução do Conselho Federal de Psicologia dedicada especificamente às bissexualidades e demais orientações não monossexuais. Estabelece que essas orientações não são doença, transtorno ou desvio, veda práticas de conversão e exige atuação contra a bifobia e o monossexismo. Marco central para a despatologização das não monossexualidades no Brasil.",
+      "eixo": "bi",
+      "pais": "brasil",
+      "tipo": "juridico",
+      "fonte": "CFP, Resolução 08/2022. Disponível em: https://site.cfp.org.br/cfp-publica-resolucao-sobre-bissexualidades/"
     }
   ]
 }
