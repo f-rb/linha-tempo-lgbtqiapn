@@ -299,3 +299,19 @@ dialog#modal-evento::backdrop {
     padding: 1.2rem 1.1rem 1rem;
   }
 }
+
+/* Links dentro do modal (fonte com URL clicável) */
+#modal-fonte a {
+  color: var(--cor-eixo, #6b46c1);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+#modal-fonte a:hover,
+#modal-fonte a:focus-visible {
+  text-decoration-thickness: 2px;
+  outline: none;
+}
+#modal-fonte a:visited {
+  color: var(--cor-eixo, #6b46c1);
+}
