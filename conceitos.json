@@ -1,0 +1,33 @@
+{
+  "meta": {
+    "titulo": "Entenda os conceitos",
+    "subtitulo": "Vocabulário fundamental para o recorte de bissexualidades e orientações não monossexuais",
+    "atualizado": "2026-11"
+  },
+  "conceitos": [
+    {
+      "id": "cisheteronormatividade",
+      "titulo": "Cisheteronormatividade",
+      "resumo": "Saber hegemônico que toma a heterossexualidade como a forma normal, legítima e universal de exercício da sexualidade, e a cisgeneridade como padrão de normalidade em identidade de gênero. É o sistema que organiza instituições (família, escola, igreja, mídia) e produz o que é visto como 'normal' ou 'desviante'.",
+      "fonte": "CREPOP/CFP, Referências Técnicas para Atuação de Psicólogas, Psicólogos e Psicólogues em Políticas Públicas para População LGBTQIA+, 2023."
+    },
+    {
+      "id": "lgbtqiafobia",
+      "titulo": "LGBTQIA+fobia",
+      "resumo": "Manifestação arbitrária que designa o outro como 'oposto' — contrário à norma, inferior ou anormal. Não se limita à violência física: inclui violências veladas, omissões e hierarquizações. Afeta todas as pessoas que desafiam a norma corpo-sexo-gênero-sexualidade-desejo, incluindo bissexuais, intersexuais, assexuais, travestis e pessoas trans.",
+      "fonte": "CREPOP/CFP, Referências Técnicas para Atuação de Psicólogas, Psicólogos e Psicólogues em Políticas Públicas para População LGBTQIA+, 2023."
+    },
+    {
+      "id": "sofrimento-estrutural",
+      "titulo": "Sofrimento psíquico estrutural",
+      "resumo": "O sofrimento psíquico de pessoas LGBTQIA+ não é fruto de processos internos individuais nem das orientações sexuais ou identidades de gênero em si. É produzido pela LGBTQIA+fobia estrutural, que trata essas expressões como anormais ou patológicas. A psicologia deve acolher esse sofrimento sem patologizar a identidade que o origina.",
+      "fonte": "CREPOP/CFP, Referências Técnicas para Atuação de Psicólogas, Psicólogos e Psicólogues em Políticas Públicas para População LGBTQIA+, 2023."
+    },
+    {
+      "id": "monossexismo",
+      "titulo": "Monossexismo",
+      "resumo": "Estrutura regulatória que se dirige, de forma excludente e violenta, às orientações não monossexuais — aquelas em que a atração afetivo-sexual se dirige a mais de uma identidade de gênero. Opera como o heterossexismo e a heteronormatividade: produz pressão social para que pessoas bissexuais e não monossexuais 'escolham um lado' ou se enquadrem em categorias monossexuais.",
+      "fonte": "CREPOP/CFP (2023); JAEGER (2018); EISNER (2013); Resolução CFP 08/2022."
+    }
+  ]
+}

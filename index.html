@@ -32,6 +32,12 @@
       <span><i class="dot" style="background:#6b46c1"></i> Ciência/Psi</span>
       <span><i class="dot" style="background:#d53f8c"></i> Bi / Não Monossexual</span>
     </div>
+    <div class="acoes-extras">
+      <button type="button" class="chip acao" id="btn-conceitos">
+        Entenda os conceitos
+      </button>
+      <!-- Reservado para o futuro botão "Antes das identidades" -->
+    </div>
   </header>
 
   <main>
@@ -60,6 +66,17 @@
       <h2 id="modal-titulo"></h2>
       <p id="modal-resumo"></p>
       <span class="modal-fonte" id="modal-fonte"></span>
+    </div>
+  </dialog>
+
+  <dialog id="modal-conceitos" aria-labelledby="modal-conceitos-titulo">
+    <button type="button" class="modal-fechar" id="modal-conceitos-fechar" aria-label="Fechar">×</button>
+    <div class="modal-conteudo">
+      <h2 id="modal-conceitos-titulo">Entenda os conceitos</h2>
+      <p class="modal-conceitos-subtitulo">Vocabulário fundamental para o recorte de bissexualidades e orientações não monossexuais.</p>
+      <div id="conceitos-lista" class="conceitos-lista">
+        <!-- Cards de conceitos injetados via JS -->
+      </div>
     </div>
   </dialog>
 
