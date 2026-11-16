@@ -295,6 +295,39 @@
       "pais": "brasil",
       "tipo": "juridico",
       "fonte": "CFP, Resolução 08/2022. Disponível em: https://site.cfp.org.br/cfp-publica-resolucao-sobre-bissexualidades/"
+    },
+    {
+      "id": "2000-apa-lgb",
+      "data": "2000",
+      "ano": 2000,
+      "titulo": "APA: primeiras diretrizes para clientes lésbicas, gays e bissexuais",
+      "resumo": "A Associação Americana de Psicologia publica suas diretrizes para psicoterapia com clientes lésbicas, gays e bissexuais. É a primeira vez que a bissexualidade aparece explicitamente no título de um documento oficial da APA, sinalizando o reconhecimento da orientação bissexual como identidade legítima e não como fase de transição.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "APA, Guidelines for psychotherapy with lesbian, gay, and bisexual clients, 2000."
+    },
+    {
+      "id": "2010-apa-afirmativa",
+      "data": "2010",
+      "ano": 2010,
+      "titulo": "APA: respostas afirmativas e oposição às terapias de conversão",
+      "resumo": "Documento da APA consolida a posição contra tentativas de mudar a orientação sexual e defende práticas afirmativas. Para pessoas bissexuais, isso significa reconhecer a legitimidade da atração por mais de um gênero, sem pressão para 'escolher um lado' — pressão essa frequentemente descrita como monossexismo.",
+      "eixo": "bi",
+      "pais": "mundo",
+      "tipo": "ciencia",
+      "fonte": "APA, Appropriate affirmative responses to sexual orientation distress and change efforts (ANTON, 2010)."
+    },
+    {
+      "id": "2020-onu-terapias-conversao",
+      "data": "2020",
+      "ano": 2020,
+      "titulo": "ONU pede proibição global das terapias de conversão",
+      "resumo": "O Alto Comissariado da ONU para Direitos Humanos publica relatório pedindo o fim das práticas de 'conversão' sexual no mundo. O documento conecta saúde mental, direitos humanos e a luta contra a patologização das orientações não heterossexuais, incluindo bissexuais e não monossexuais.",
+      "eixo": "direitos",
+      "pais": "mundo",
+      "tipo": "juridico",
+      "fonte": "ONU, Report on conversion therapy, 2020. Disponível em: https://docs.un.org/en/A/HRC/44/53"
     }
   ]
 }
