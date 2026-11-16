@@ -315,3 +315,114 @@ dialog#modal-evento::backdrop {
 #modal-fonte a:visited {
   color: var(--cor-eixo, #6b46c1);
 }
+
+/* ---------- BOTÕES DE AÇÃO EXTRA (Entenda os conceitos, etc.) ---------- */
+.acoes-extras {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .6rem;
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--borda);
+}
+
+.chip.acao {
+  background: transparent;
+  border: 1px dashed var(--bi);
+  color: var(--bi);
+  font-weight: 600;
+  padding: .45rem 1rem;
+}
+.chip.acao:hover,
+.chip.acao:focus-visible {
+  background: var(--bi);
+  color: var(--fundo);
+  border-style: solid;
+}
+
+/* ---------- MODAL DE CONCEITOS ---------- */
+dialog#modal-conceitos {
+  background: var(--fundo-card);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--ciencia);
+  border-radius: 12px;
+  padding: 1.5rem 1.6rem 1.3rem;
+  max-width: min(720px, 92vw);
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+  font-family: inherit;
+  line-height: 1.55;
+}
+
+dialog#modal-conceitos::backdrop {
+  background: rgba(0, 0, 0, .65);
+  backdrop-filter: blur(3px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog#modal-conceitos[open] {
+    animation: modal-entrar .22s ease-out;
+  }
+  dialog#modal-conceitos[open]::backdrop {
+    animation: backdrop-entrar .22s ease-out;
+  }
+}
+
+dialog#modal-conceitos .modal-conteudo {
+  padding-right: 1.5rem;
+}
+
+.modal-conceitos-subtitulo {
+  margin: 0 0 1rem;
+  font-size: .9rem;
+  color: var(--texto-suave);
+}
+
+/* ---------- CARDS DE CONCEITO ---------- */
+.conceitos-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.conceito-card {
+  background: rgba(255, 255, 255, .03);
+  border: 1px solid var(--borda);
+  border-left: 3px solid var(--ciencia);
+  border-radius: 8px;
+  padding: .9rem 1rem;
+}
+
+.conceito-card h3 {
+  margin: 0 0 .4rem;
+  font-size: 1rem;
+  color: var(--ciencia);
+}
+
+.conceito-card p {
+  margin: 0 0 .5rem;
+  font-size: .9rem;
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+.conceito-card .conceito-fonte {
+  display: block;
+  font-size: .72rem;
+  color: var(--texto-suave);
+  opacity: .8;
+  border-top: 1px solid var(--borda);
+  padding-top: .4rem;
+  margin-top: .5rem;
+}
+
+@media (max-width: 500px) {
+  dialog#modal-conceitos {
+    max-width: 96vw;
+    padding: 1.2rem 1.1rem 1rem;
+  }
+}

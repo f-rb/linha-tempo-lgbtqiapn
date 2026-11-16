@@ -165,6 +165,69 @@ function ligarModal() {
   });
 }
 
+// ---------- Conceitos ----------
+async function carregarConceitos() {
+  try {
+    const base = new URL(".", window.location.href);
+    const resp = await fetch(new URL("conceitos.json", base));
+    if (!resp.ok) throw new Error("Falha ao carregar conceitos.json");
+    const json = await resp.json();
+    renderConceitos(json.conceitos || []);
+  } catch (err) {
+    console.error("Erro ao carregar conceitos:", err);
+    const lista = document.getElementById("conceitos-lista");
+    if (lista) {
+      lista.innerHTML = '<p class="vazio">Não foi possível carregar os conceitos.</p>';
+    }
+  }
+}
+
+function renderConceitos(conceitos) {
+  const lista = document.getElementById("conceitos-lista");
+  if (!lista) return;
+  lista.innerHTML = "";
+
+  if (conceitos.length === 0) {
+    lista.innerHTML = '<p class="vazio">Nenhum conceito cadastrado.</p>';
+    return;
+  }
+
+  conceitos.forEach(c => {
+    const card = document.createElement("article");
+    card.className = "conceito-card";
+    card.innerHTML = `
+      <h3>${c.titulo}</h3>
+      <p>${c.resumo}</p>
+      <span class="conceito-fonte">${c.fonte}</span>
+    `;
+    lista.appendChild(card);
+  });
+}
+
+function abrirModalConceitos() {
+  const dialog = document.getElementById("modal-conceitos");
+  if (!dialog) return;
+  dialog.showModal();
+}
+
+function ligarModalConceitos() {
+  const dialog = document.getElementById("modal-conceitos");
+  const btnAbrir = document.getElementById("btn-conceitos");
+  const btnFechar = document.getElementById("modal-conceitos-fechar");
+  if (!dialog || !btnAbrir || !btnFechar) return;
+
+  btnAbrir.addEventListener("click", abrirModalConceitos);
+  btnFechar.addEventListener("click", () => dialog.close());
+
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("cancel", (e) => {
+    e.preventDefault();
+    dialog.close();
+  });
+}
+
 // ---------- Filtros ----------
 function ligarFiltros() {
   document.querySelectorAll('[data-eixo]').forEach(btn => {
@@ -188,5 +251,7 @@ function ligarFiltros() {
 
 // ---------- Init ----------
 ligarModal();
+ligarModalConceitos();
 ligarFiltros();
 carregar();
+carregarConceitos();
