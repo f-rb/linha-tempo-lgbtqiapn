@@ -228,6 +228,72 @@ function ligarModalConceitos() {
   });
 }
 
+// ---------- Antes das Identidades ----------
+async function carregarAntesIdentidades() {
+  try {
+    const base = new URL(".", window.location.href);
+    const resp = await fetch(new URL("antes-identidades.json", base));
+    if (!resp.ok) throw new Error("Falha ao carregar antes-identidades.json");
+    const json = await resp.json();
+    renderAntesIdentidades(json.marcadores || []);
+  } catch (err) {
+    console.error("Erro ao carregar antes-identidades:", err);
+    const lista = document.getElementById("antes-identidades-lista");
+    if (lista) {
+      lista.innerHTML = '<p class="vazio">Não foi possível carregar os marcadores históricos.</p>';
+    }
+  }
+}
+
+function renderAntesIdentidades(marcadores) {
+  const lista = document.getElementById("antes-identidades-lista");
+  if (!lista) return;
+  lista.innerHTML = "";
+
+  if (marcadores.length === 0) {
+    lista.innerHTML = '<p class="vazio">Nenhum marcador cadastrado.</p>';
+    return;
+  }
+
+  marcadores.forEach(m => {
+    const card = document.createElement("article");
+    card.className = "antes-card";
+    card.innerHTML = `
+      <h3>${m.epoca}</h3>
+      <span class="antes-periodo">${m.periodo}</span>
+      <img class="antes-imagem" src="${m.imagem}" alt="Ilustração conceitual: ${m.epoca}" onerror="this.style.display='none'">
+      <p>${m.texto}</p>
+      <p class="antes-pergunta">${m.pergunta}</p>
+      <span class="antes-fontes">${m.fontes}</span>
+    `;
+    lista.appendChild(card);
+  });
+}
+
+function abrirModalAntes() {
+  const dialog = document.getElementById("modal-antes-identidades");
+  if (!dialog) return;
+  dialog.showModal();
+}
+
+function ligarModalAntes() {
+  const dialog = document.getElementById("modal-antes-identidades");
+  const btnAbrir = document.getElementById("btn-antes-identidades");
+  const btnFechar = document.getElementById("modal-antes-fechar");
+  if (!dialog || !btnAbrir || !btnFechar) return;
+
+  btnAbrir.addEventListener("click", abrirModalAntes);
+  btnFechar.addEventListener("click", () => dialog.close());
+
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("cancel", (e) => {
+    e.preventDefault();
+    dialog.close();
+  });
+}
+
 // ---------- Filtros ----------
 function ligarFiltros() {
   document.querySelectorAll('[data-eixo]').forEach(btn => {
@@ -252,6 +318,8 @@ function ligarFiltros() {
 // ---------- Init ----------
 ligarModal();
 ligarModalConceitos();
+ligarModalAntes();
 ligarFiltros();
 carregar();
 carregarConceitos();
+carregarAntesIdentidades();
