@@ -1,12 +1,58 @@
+/* Cores dos eixos (iguais nos dois modos) */
 :root {
   --direitos: #2b6cb0;
   --ciencia: #6b46c1;
   --bi: #d53f8c;
-  --fundo: #0f1226;
-  --fundo-card: #1a1f3d;
-  --texto: #e8eaf6;
-  --texto-suave: #a9b0d0;
-  --borda: #2a3060;
+
+  /* Cores do modo escuro (o que já tínhamos) */
+  --fundo-escuro: #0f1226;
+  --fundo-card-escuro: #1a1f3d;
+  --texto-escuro: #e8eaf6;
+  --texto-suave-escuro: #a9b0d0;
+  --borda-escuro: #2a3060;
+
+  /* Cores do modo claro */
+  --fundo-claro: #f8f9fa;
+  --fundo-card-claro: #ffffff;
+  --texto-claro: #1a202c;
+  --texto-suave-claro: #4a5568;
+  --borda-claro: #e2e8f0;
+}
+
+/* 1. PADRÃO: O sistema decide */
+:root {
+  --fundo: var(--fundo-claro);
+  --fundo-card: var(--fundo-card-claro);
+  --texto: var(--texto-claro);
+  --texto-suave: var(--texto-suave-claro);
+  --borda: var(--borda-claro);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo: var(--fundo-escuro);
+    --fundo-card: var(--fundo-card-escuro);
+    --texto: var(--texto-escuro);
+    --texto-suave: var(--texto-suave-escuro);
+    --borda: var(--borda-escuro);
+  }
+}
+
+/* 2. FORÇADO PELO BOTÃO: O JS adiciona a classe no body */
+body.modo-claro {
+  --fundo: var(--fundo-claro);
+  --fundo-card: var(--fundo-card-claro);
+  --texto: var(--texto-claro);
+  --texto-suave: var(--texto-suave-claro);
+  --borda: var(--borda-claro);
+}
+
+body.modo-escuro {
+  --fundo: var(--fundo-escuro);
+  --fundo-card: var(--fundo-card-escuro);
+  --texto: var(--texto-escuro);
+  --texto-suave: var(--texto-suave-escuro);
+  --borda: var(--borda-escuro);
 }
 
 * { box-sizing: border-box; }
@@ -669,4 +715,46 @@ dialog#modal-antes-identidades .modal-conteudo {
     max-width: 96vw;
     padding: 1.2rem 1.1rem 1rem;
   }
+}
+
+/* ---------- BOTÃO DE TEMA (CLARO/ESCURO) ---------- */
+.header-topo {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  z-index: 10;
+}
+
+.btn-tema {
+  background: transparent;
+  border: 1px solid var(--borda);
+  color: var(--texto);
+  width: 2.6rem;
+  height: 2.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  transition: background .2s, border-color .2s, transform .2s;
+}
+
+.btn-tema:hover,
+.btn-tema:focus-visible {
+  background: rgba(255, 255, 255, .1);
+  border-color: var(--texto-suave);
+  transform: scale(1.05);
+  outline: none;
+}
+
+/* Ajuste no hover para o modo claro (fundo branco) */
+body.modo-claro .btn-tema:hover,
+body.modo-claro .btn-tema:focus-visible {
+  background: rgba(0, 0, 0, .05);
+}
+
+/* O header precisa de position relative para o botão flutuar nele */
+.hero {
+  position: relative;
 }
