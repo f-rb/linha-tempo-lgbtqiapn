@@ -315,7 +315,50 @@ function ligarFiltros() {
   });
 }
 
+// ---------- Tema (Claro / Escuro) ----------
+function aplicarTema(tema) {
+  const body = document.body;
+  const icone = document.getElementById("icone-tema");
+
+  if (tema === "claro") {
+    body.classList.remove("modo-escuro");
+    body.classList.add("modo-claro");
+    if (icone) icone.textContent = "☀️";
+  } else {
+    body.classList.remove("modo-claro");
+    body.classList.add("modo-escuro");
+    if (icone) icone.textContent = "🌙";
+  }
+}
+
+function iniciarTema() {
+  const btnTema = document.getElementById("btn-tema");
+  if (!btnTema) return;
+
+  // 1. Verifica se o usuário já escolheu algo antes
+  const temaSalvo = localStorage.getItem("tema-preferido");
+
+  if (temaSalvo) {
+    aplicarTema(temaSalvo);
+  } else {
+    // 2. Se não escolheu, segue o sistema
+    const prefereEscuro = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    aplicarTema(prefereEscuro ? "escuro" : "claro");
+  }
+
+  // 3. Escuta o clique no botão
+  btnTema.addEventListener("click", () => {
+    const body = document.body;
+    const temaAtual = body.classList.contains("modo-claro") ? "claro" : "escuro";
+    const novoTema = temaAtual === "claro" ? "escuro" : "claro";
+
+    aplicarTema(novoTema);
+    localStorage.setItem("tema-preferido", novoTema);
+  });
+}
+
 // ---------- Init ----------
+iniciarTema();
 ligarModal();
 ligarModalConceitos();
 ligarModalAntes();
