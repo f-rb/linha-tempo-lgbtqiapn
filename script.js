@@ -261,7 +261,7 @@ function renderAntesIdentidades(marcadores) {
     card.innerHTML = `
       <h3>${m.epoca}</h3>
       <span class="antes-periodo">${m.periodo}</span>
-      <img class="antes-imagem" src="${m.imagem}" alt="Ilustração conceitual: ${m.epoca}" onerror="this.style.display='none'">
+      <img class="antes-imagem" src="${m.imagem}" alt="${m.alt || 'Ilustração conceitual: ' + m.epoca}" onerror="this.style.display='none'">
       <p>${m.texto}</p>
       <p class="antes-pergunta">${m.pergunta}</p>
       <span class="antes-fontes">${m.fontes}</span>
