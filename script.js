@@ -307,6 +307,31 @@ function ligarModalAntes() {
   });
 }
 
+// ---------- Modal Institucional ----------
+function abrirModalInstitucional() {
+  const dialog = document.getElementById("modal-institucional");
+  if (!dialog) return;
+  dialog.showModal();
+}
+
+function ligarModalInstitucional() {
+  const dialog = document.getElementById("modal-institucional");
+  const btnAbrir = document.getElementById("btn-institucional");
+  const btnFechar = document.getElementById("modal-inst-fechar");
+  if (!dialog || !btnAbrir || !btnFechar) return;
+
+  btnAbrir.addEventListener("click", abrirModalInstitucional);
+  btnFechar.addEventListener("click", () => dialog.close());
+
+  dialog.addEventListener("click", (e) => {
+    if (e.target === dialog) dialog.close();
+  });
+  dialog.addEventListener("cancel", (e) => {
+    e.preventDefault();
+    dialog.close();
+  });
+}
+
 // ---------- Filtros ----------
 function ligarFiltros() {
   document.querySelectorAll('[data-eixo]').forEach(btn => {
@@ -394,6 +419,7 @@ iniciarTema();
 ligarModal();
 ligarModalConceitos();
 ligarModalAntes();
+ligarModalInstitucional();
 ligarFiltros();
 ligarAcordeao();
 carregar();

@@ -825,3 +825,117 @@ body.modo-claro .btn-tema:focus-visible {
   margin: 0.2rem 0 1rem 0;
   text-align: center;
 }
+
+/* ---------- TARJA DO TRABALHO (BADGE NO TOPO) ---------- */
+.badge-trabalho {
+  display: inline-block;
+  background: rgba(107, 70, 193, 0.15); /* Roxo translúcido */
+  border: 1px solid var(--ciencia);
+  color: var(--texto);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+
+  /* Novas propriedades para ser um botão clicável */
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.badge-trabalho:hover,
+.badge-trabalho:focus-visible {
+  background: rgba(107, 70, 193, 0.3);
+  border-color: var(--bi); /* Muda para rosa no hover */
+  outline: none;
+}
+
+/* ---------- MODAL INSTITUCIONAL ---------- */
+dialog#modal-institucional {
+  background: var(--fundo-card);
+  color: var(--texto);
+  border: 1px solid var(--borda);
+  border-left: 4px solid var(--bi); /* Rosa da bissexualidade */
+  border-radius: 12px;
+  padding: 1.5rem 1.6rem 1.3rem;
+  max-width: min(650px, 92vw);
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, .5);
+  font-family: inherit;
+  line-height: 1.55;
+}
+
+dialog#modal-institucional::backdrop {
+  background: rgba(0, 0, 0, .65);
+  backdrop-filter: blur(3px);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  dialog#modal-institucional[open] {
+    animation: modal-entrar .22s ease-out;
+  }
+  dialog#modal-institucional[open]::backdrop {
+    animation: backdrop-entrar .22s ease-out;
+  }
+}
+
+dialog#modal-institucional .modal-conteudo {
+  padding-right: 1.5rem;
+}
+
+/* Blocos de informação dentro do modal */
+.inst-bloco {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--borda);
+}
+
+.inst-bloco:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.inst-bloco h3 {
+  color: var(--bi); /* Rosa da bissexualidade para os títulos */
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.inst-bloco p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--texto);
+}
+
+.inst-lista {
+  list-style: none; /* Remove as bolinhas padrão */
+  padding: 0;
+  margin: 0;
+}
+
+.inst-lista li {
+  font-size: 0.9rem;
+  color: var(--texto);
+  padding: 0.3rem 0;
+  border-bottom: 1px dashed var(--borda); /* Linha pontilhada para separar os nomes */
+}
+
+.inst-lista li:last-child {
+  border-bottom: none;
+}
+
+/* Responsivo para celular */
+@media (max-width: 500px) {
+  dialog#modal-institucional {
+    max-width: 96vw;
+    padding: 1.2rem 1.1rem 1rem;
+  }
+}

@@ -6,7 +6,7 @@
 - [x] Criar e configurar o favicon do site.
 - [x] Adicionar legenda descritiva embaixo das imagens (agora vem do JSON).
 - [ ] Remover o `!important` do CSS da `.legenda-imagem` e ajustar a especificidade corretamente (dívida técnica).
-- [ ] Criar página institucional com informações da disciplina, grupo, professora e período.
+- [X] Criar página institucional com informações da disciplina, grupo, professora e período.
 
 ## Possibilidades Futuras
 - [ ] Avaliar a implementação do acordeão nos cards da própria linha do tempo (quando o filtro "Todos" estiver ativo), para evitar rolagem excessiva.
