@@ -194,11 +194,16 @@ function renderConceitos(conceitos) {
 
   conceitos.forEach(c => {
     const card = document.createElement("article");
-    card.className = "conceito-card";
+    card.className = "conceito-card acordeao-card";
     card.innerHTML = `
-      <h3>${c.titulo}</h3>
-      <p>${c.resumo}</p>
-      <span class="conceito-fonte">${c.fonte}</span>
+      <button class="acordeao-botao" aria-expanded="false">
+        <h3 class="titulo" style="margin: 0;">${c.titulo}</h3>
+        <span class="seta" aria-hidden="true">▼</span>
+      </button>
+      <div class="acordeao-conteudo">
+        <p>${c.resumo}</p>
+        <span class="conceito-fonte">${c.fonte}</span>
+      </div>
     `;
     lista.appendChild(card);
   });
@@ -257,14 +262,22 @@ function renderAntesIdentidades(marcadores) {
 
   marcadores.forEach(m => {
     const card = document.createElement("article");
-    card.className = "antes-card";
+    card.className = "antes-card acordeao-card";
     card.innerHTML = `
-      <h3>${m.epoca}</h3>
-      <span class="antes-periodo">${m.periodo}</span>
-      <img class="antes-imagem" src="${m.imagem}" alt="${m.alt || 'Ilustração conceitual: ' + m.epoca}" onerror="this.style.display='none'">
-      <p>${m.texto}</p>
-      <p class="antes-pergunta">${m.pergunta}</p>
-      <span class="antes-fontes">${m.fontes}</span>
+      <button class="acordeao-botao" aria-expanded="false">
+        <div>
+          <h3 class="titulo" style="margin: 0;">${m.epoca}</h3>
+          <span class="antes-periodo" style="display: block; margin-bottom: 0;">${m.periodo}</span>
+        </div>
+        <span class="seta" aria-hidden="true">▼</span>
+      </button>
+      <div class="acordeao-conteudo">
+        <img class="antes-imagem" src="${m.imagem}" alt="${m.alt || 'Ilustração conceitual: ' + m.epoca}" onerror="this.style.display='none'">
+        <p class="legenda-imagem">${m.legenda || '(Legenda não informada)'}</p>
+        <p>${m.texto}</p>
+        <p class="antes-pergunta">${m.pergunta}</p>
+        <span class="antes-fontes">${m.fontes}</span>
+      </div>
     `;
     lista.appendChild(card);
   });
@@ -357,12 +370,32 @@ function iniciarTema() {
   });
 }
 
+// ---------- Lógica do Acordeão ----------
+function ligarAcordeao() {
+  // O evento é capturado no document inteiro para funcionar
+  // mesmo nos cards que são criados depois (via JS)
+  document.addEventListener("click", (e) => {
+    const botao = e.target.closest(".acordeao-botao");
+    if (!botao) return;
+
+    const card = botao.closest(".acordeao-card");
+    if (!card) return;
+
+    // Alterna a classe
+    const estaAberto = card.classList.toggle("aberto");
+    
+    // Atualiza o aria-expanded para leitores de tela
+    botao.setAttribute("aria-expanded", estaAberto ? "true" : "false");
+  });
+}
+
 // ---------- Init ----------
 iniciarTema();
 ligarModal();
 ligarModalConceitos();
 ligarModalAntes();
 ligarFiltros();
+ligarAcordeao();
 carregar();
 carregarConceitos();
 carregarAntesIdentidades();
