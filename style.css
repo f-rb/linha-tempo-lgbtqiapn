@@ -758,3 +758,70 @@ body.modo-claro .btn-tema:focus-visible {
 .hero {
   position: relative;
 }
+
+/* ---------- ESTILOS DO ACORDEÃO (SANFONA) ---------- */
+.acordeao-botao {
+  background: transparent;
+  border: none;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Garante que o título dentro do botão não mude de cor no hover */
+.acordeao-botao:hover .titulo,
+.acordeao-botao:focus-visible .titulo {
+  color: var(--cor-destaque);
+}
+
+.acordeao-botao:focus-visible {
+  outline: 2px solid var(--texto-suave);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+/* A setinha */
+.acordeao-botao .seta {
+  font-size: 0.8rem;
+  transition: transform 0.3s ease;
+  display: inline-block;
+}
+
+/* Quando aberto, a setinha gira 180 graus */
+.acordeao-card.aberto .acordeao-botao .seta {
+  transform: rotate(180deg);
+}
+
+/* O conteúdo que será escondido */
+.acordeao-conteudo {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, opacity 0.3s ease;
+  opacity: 0;
+}
+
+/* Quando o card está aberto, o conteúdo aparece */
+.acordeao-card.aberto .acordeao-conteudo {
+  max-height: 2000px; /* Valor alto o suficiente para o conteúdo */
+  opacity: 1;
+}
+
+/* Ajuste de padding para separar o conteúdo do botão quando aberto */
+.acordeao-conteudo > *:first-child {
+  margin-top: 0.8rem;
+}
+
+/* Legenda das imagens no modal "Antes das identidades" */
+.antes-card .legenda-imagem {
+  font-size: 0.75rem !important; /* Garante que fique menor que o texto */
+  color: var(--texto-suave);
+  font-style: italic;
+  margin: 0.2rem 0 1rem 0;
+  text-align: center;
+}
