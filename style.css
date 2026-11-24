@@ -69,11 +69,23 @@ body {
 .hero {
   padding: 3rem 1.25rem 2rem;
   text-align: center;
-  background:
-    linear-gradient(135deg, rgba(213,63,140,.25), transparent 40%),
-    linear-gradient(225deg, rgba(107,70,193,.25), transparent 40%),
-    var(--fundo);
+
+  /* A imagem de fundo com um overlay para garantir leitura */
+  background-image:
+    linear-gradient(rgba(15, 18, 38, 0.5), rgba(15, 18, 38, 0.5)),
+    url('img/fundo-hero.png');
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
   border-bottom: 1px solid var(--borda);
+}
+
+/* Ajuste do overlay para o Modo Claro (fundo branco transparente) */
+body.modo-claro .hero {
+  background-image:
+    linear-gradient(rgba(248, 249, 250, 0.5), rgba(248, 249, 250, 0.5)),
+    url('img/fundo-hero.png');
 }
 .hero h1 {
   margin: 0 0 .4rem;
