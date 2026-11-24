@@ -10,3 +10,4 @@
 
 ## Possibilidades Futuras
 - [ ] Avaliar a implementação do acordeão nos cards da própria linha do tempo (quando o filtro "Todos" estiver ativo), para evitar rolagem excessiva.
+- [ ] Adicionar suporte a imagens (campos `imagem`, `legenda`, `alt`) no `dados.json` (para eventos históricos, ex: Stonewall) e no `conceitos.json` (ex: guarda-chuva Bi+). O código do front-end já está preparado para exibir as imagens caso os campos existam.
